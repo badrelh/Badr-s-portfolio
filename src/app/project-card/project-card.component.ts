@@ -20,4 +20,6 @@ export class ProjectCardComponent {
   // @Input() projectLink: string="";
   @Input() project ={} as Project;
 
+  @Input() index!: number;
+
 }

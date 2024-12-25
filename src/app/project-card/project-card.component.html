@@ -1,12 +1,64 @@
 <div class="card shadow text-center" style="max-width: 350px; min-width: 350px;">
     <div class="card-body">
-        <h5 class="card-title">{{project.name}}</h5>
-        <p class="card-text">{{project.description}}</p>
-        <button class="btn btn-primary" >View More</button> <!-- To Link it with github-->
+      <!-- Titre du projet -->
+      <h5 class="card-title">{{ project.name }}</h5>
+      
+      <!-- Description courte -->
+      <p class="card-text">{{ project.description }}</p>
+      
+      <!-- Bouton pour ouvrir la modal -->
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="modal"
+        [attr.data-bs-target]="'#projectModal' + index">
+        View More
+      </button>
     </div>
+  
+    <!-- Footer avec les tags -->
     <div class="card-footer">
-        <div class="d-flex flex-wrap justify-content-center">
-            <div *ngFor="let tag of project.footer" [ngStyle]="{'background-color': tag.getColor()}" class="tag me-2 mb-1">{{tag.getKey()}}</div>
+      <div class="d-flex flex-wrap justify-content-center">
+        <div
+          *ngFor="let tag of project.footer"
+          [ngStyle]="{'background-color': tag.getColor()}"
+          class="tag me-2 mb-1">
+          {{ tag.getKey() }}
         </div>
+      </div>
     </div>
-</div>
+  
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      [id]="'projectModal' + index"
+      tabindex="-1"
+      aria-labelledby="projectModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          
+          <!-- Header de la modal -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModalLabel">{{ project.name }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          
+          <!-- Corps de la modal -->
+          <div class="modal-body">
+            <!-- Affichage des détails avec HTML enrichi -->
+            <div [innerHTML]="project.details"></div>
+            
+            <!-- Lien GitHub optionnel -->
+            
+          </div>
+          
+          <!-- Footer de la modal -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
