@@ -42,6 +42,6 @@ This project showcases my **web development skills** through a responsive and we
 
 You can reach out to me directly through the contact form on the website, or connect with me on LinkedIn or GitHub.
 
-
+--
 
 Thanks for visiting!

@@ -24,6 +24,8 @@ export class Tag {
     static readonly OOP = new Tag('OOP', 'cyan');
     static readonly API = new Tag('API', 'skyblue');
     static readonly NUMERICAL_METHODS = new Tag('Numerical Methods', 'steelblue');
+    static readonly DEVOPS = new Tag('DevOps', 'darkgreen');
+    static readonly DOCKER = new Tag('Docker', 'darkred');
 
     private constructor(private readonly key: string, private readonly color: string) {}
 

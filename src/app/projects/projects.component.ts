@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { Project } from '../../_models/Projects'; 
 import { Tag } from '../../_models/tag';
 
+import { __decorate } from "tslib";
+
+
 
 
 @Component({
@@ -14,6 +17,7 @@ import { Tag } from '../../_models/tag';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
+
 export class ProjectsComponent {
   @Input() index!: number;
   projects: Project[] = [
@@ -470,7 +474,56 @@ export class ProjectsComponent {
         <li><strong>Approaches:</strong> Jacobian matrices, iterative methods</li>
       </ul>
       `
-    )    
+    ),
+    new Project(
+      10, // ID unique du projet
+      'Fire Alert & Management System', // Titre du projet
+      'Developed a complete web-based system for fire alert surveillance with Angular frontend, Node.js backend, and PostgreSQL database, deployed with Docker on Azure.', // Description courte
+      [Tag.ANGULAR, Tag.NODEJS, Tag.POSTGRESQL, Tag.DOCKER, Tag.DEVOPS], // Tags associés
+      '', // Lien GitHub (à ajouter)
+      '', // Lien déployé (à ajouter si applicable)
+    
+      `
+      <h3 class="text-primary mt-4">Overview</h3>
+      <p>
+        This project is a full-featured <strong>Fire Alert & Management System</strong> designed for monitoring and managing fire hazards in construction sites.
+        It includes role-based user access, real-time alert tracking, and insightful analytics. The solution is built with <strong>Angular</strong> for the frontend,
+        <strong>Node.js/Express</strong> for the backend, and <strong>PostgreSQL</strong> for data persistence.
+      </p>
+      
+      <h3 class="text-primary mt-4">Key Features</h3>
+      <ul class="list-unstyled">
+        <li><strong>Authentication:</strong> Secure login using <span class="fw-semibold text-primary">JWT</span>, with route protection via <code>AuthGuard</code> and request filtering via <code>HTTP Interceptor</code>.</li>
+        <li><strong>Fire Alert Tracking:</strong> Create, update, and visualize active fire alerts linked to construction sites.</li>
+        <li><strong>User Roles:</strong> Admin, Company, and Visitor roles with dynamic interface and feature access.</li>
+        <li><strong>Analytics:</strong> Dashboard with charts and reports for fire trends and statistics.</li>
+        <li><strong>API Gateway:</strong> Node.js gateway for routing requests across microservices.</li>
+      </ul>
+      
+      <h3 class="text-primary mt-4">Architecture & Technologies</h3>
+      <ul class="list-unstyled">
+        <li><strong>Frontend:</strong> Angular 17 + Bootstrap</li>
+        <li><strong>Backend:</strong> Node.js, Express.js</li>
+        <li><strong>Database:</strong> PostgreSQL</li>
+        <li><strong>DevOps:</strong> Docker, Docker Compose, CI/CD (GitLab)</li>
+        <li><strong>Deployment:</strong> Microsoft Azure</li>
+      </ul>
+      
+      
+      <h3 class="text-primary mt-4">Results</h3>
+      <ul class="list-unstyled">
+        <li>Fully functioning system deployed and tested in real conditions</li>
+        <li>Demonstrated strong understanding of frontend/backend integration and microservice architecture</li>
+        <li>Hands-on experience with CI/CD pipelines and cloud deployment</li>
+      </ul>
+    
+      <p class="mt-4">
+        This project reflects my ability to design, implement, and deploy a complete web application using modern development and DevOps tools.
+        It also shows my capacity to manage user access, handle real-time data, and deploy production-ready services.
+      </p>
+      `
+    ),
+    
     
         
   ];
