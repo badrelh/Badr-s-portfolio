@@ -523,6 +523,147 @@ export class ProjectsComponent {
       </p>
       `
     ),
+    new Project(
+      11,
+      'User-Level Threads Library',
+      'Developed a lightweight user-space threading library in C, supporting thread creation, scheduling, synchronization, and performance analysis.',
+      [Tag.C, Tag.SCHEDULING, Tag.MUTEX, Tag.PERFORMANCE],
+      '', 
+      '', 
+    
+      `
+      <h3 class="text-primary mt-4">Overview</h3>
+      <p>
+        This project consists of building a complete <strong>User-Level Threads Library</strong> in C, 
+        enabling the creation, scheduling, and synchronization of threads without relying on the operating system's thread management.
+        It includes context switching, ready and blocked queues, and a mutex system. A custom performance analysis tool was also developed.
+      </p>
+    
+      <h3 class="text-primary mt-4">Key Features</h3>
+      <ul class="list-unstyled">
+        <li><strong>Thread Creation:</strong> Create, yield, join, and terminate threads using a lightweight API.</li>
+        <li><strong>Custom Scheduler:</strong> Fair scheduling using a double-ended queue (TAILQ) for ready and blocked threads.</li>
+        <li><strong>Mutex Support:</strong> Implementation of mutual exclusion locks with waiting queues.</li>
+        <li><strong>Memory Management:</strong> Dynamic stack allocation with Valgrind stack registration to avoid memory leaks.</li>
+        <li><strong>Debug Mode:</strong> Conditional debug logging enabled via macro <code>LOG_DEBUG</code>.</li>
+        <li><strong>Performance Measurement:</strong> Custom scripts (Python) to benchmark thread operations and visualize results.</li>
+      </ul>
+    
+      <h3 class="text-primary mt-4">Architecture & Technologies</h3>
+      <ul class="list-unstyled">
+        <li><strong>Language:</strong> C (POSIX standard)</li>
+        <li><strong>Data Structures:</strong> <code>TAILQ</code> (sys/queue.h) for thread queues</li>
+        <li><strong>Context Management:</strong> <code>ucontext.h</code> for manual context switching</li>
+        <li><strong>Testing Tools:</strong> Valgrind for memory analysis, Python for result processing</li>
+      </ul>
+    
+      <h3 class="text-primary mt-4">Results</h3>
+      <ul class="list-unstyled">
+        <li>Successfully implemented a working user-level threading library compatible with a pthread-based interface.</li>
+        <li>Demonstrated fair scheduling behavior and validated thread lifecycle (create/yield/join/exit).</li>
+        <li>Achieved memory-safe execution with stack registration and cleanup verified under Valgrind.</li>
+        <li>Performance results compared favorably to pthreads under simple benchmarks.</li>
+      </ul>
+    
+      <p class="mt-4">
+        This project strengthened my understanding of context switching, low-level memory management,
+        and parallel programming principles. It highlights my ability to develop from scratch robust system-level components
+        with attention to performance, debugging, and resource safety.
+      </p>
+      `
+    ),
+
+    new Project(
+      12,
+      'Aquarium Simulation System',
+      'Built a networked simulation of fish movement using a C server (Controller) and a JavaFX client (Display), communicating through TCP sockets following a custom protocol.',
+      [Tag.C, Tag.JAVA, Tag.NETWORKING, Tag.TCP, Tag.SIMULATION],
+      '',
+      '',
+    
+      `
+      <h3 class="text-primary mt-4">Overview</h3>
+      <p>
+        The <strong>Aquarium Simulation System</strong> project consists of a distributed application simulating fish movements inside a virtual aquarium.
+        The controller server written in C manages the state and position of all fish, while multiple JavaFX clients display the aquarium views and interact with the server over TCP.
+      </p>
+    
+      <h3 class="text-primary mt-4">Key Features</h3>
+      <ul class="list-unstyled">
+        <li><strong>Controller:</strong> C server handling multi-client connections and centralized management of fish data.</li>
+        <li><strong>Client Display:</strong> JavaFX application showing a dynamic view of assigned aquarium sections, with real-time fish movements.</li>
+        <li><strong>Custom Protocol:</strong> TCP communication protocol with commands like <code>status</code>, <code>addFish</code>, <code>delFish</code>, <code>startFish</code>, and <code>getFishesContinuously</code>.</li>
+        <li><strong>Fish Mobility Models:</strong> Implementation of random waypoint mobility behavior for realistic simulation.</li>
+        <li><strong>Robust Error Handling:</strong> Full management of client timeouts, disconnections, and visual fallback mechanisms.</li>
+      </ul>
+    
+      <h3 class="text-primary mt-4">Architecture & Technologies</h3>
+      <ul class="list-unstyled">
+        <li><strong>Controller:</strong> C, TCP/IP sockets, select()</li>
+        <li><strong>Display Clients:</strong> Java, JavaFX</li>
+        <li><strong>Project Management:</strong> Agile methodology with Kanban (Trello)</li>
+      </ul>
+    
+      <h3 class="text-primary mt-4">Results</h3>
+      <ul class="list-unstyled">
+        <li>Successfully simulated and displayed fish movements across multiple clients in real time.</li>
+        <li>Handled dynamic addition, removal, and control of fish during execution.</li>
+        <li>Demonstrated mastery of network programming, multithreading, and MVC architecture in a distributed system.</li>
+      </ul>
+    
+      <p class="mt-4">
+        This project showcases my skills in designing real-time distributed systems, implementing custom communication protocols,
+        and building full-stack simulations combining systems programming (C) and GUI development (JavaFX).
+      </p>
+      `
+    ),
+    
+    new Project(
+      13,
+      'Parallel Game of Life Optimization',
+      'Implemented optimized parallel versions of the Game of Life using OpenMP and CUDA, analyzing performance on various data sets and improving execution times through multiple strategies.',
+      [Tag.C, Tag.OPENMP, Tag.CUDA, Tag.PARALLEL_COMPUTING, Tag.OPTIMIZATION],
+      '',
+      '',
+    
+      `
+      <h3 class="text-primary mt-4">Overview</h3>
+      <p>
+        This project focused on optimizing the classic <strong>Game of Life</strong> simulation through several parallel programming techniques.
+        It involved writing and profiling multiple versions of the algorithm using OpenMP for CPU-based parallelism and CUDA for GPU acceleration.
+      </p>
+    
+      <h3 class="text-primary mt-4">Key Features</h3>
+      <ul class="list-unstyled">
+        <li><strong>Parallelization:</strong> Tiled and collapsed loops using OpenMP to accelerate cell update computations.</li>
+        <li><strong>Lazy Evaluation:</strong> Skipping unnecessary updates by tracking unchanged regions across iterations.</li>
+        <li><strong>Memory Footprint Reduction:</strong> Redesign of the data structures to optimize memory access and cache usage.</li>
+        <li><strong>CUDA Acceleration:</strong> GPU kernel implementation for vector addition and exploration of memory transfer bottlenecks.</li>
+        <li><strong>Performance Analysis:</strong> Extensive measurement across different datasets and system configurations.</li>
+      </ul>
+    
+      <h3 class="text-primary mt-4">Architecture & Technologies</h3>
+      <ul class="list-unstyled">
+        <li><strong>CPU Optimizations:</strong> OpenMP (multi-threaded)</li>
+        <li><strong>GPU Optimizations:</strong> CUDA C</li>
+        <li><strong>Measurement Tools:</strong> Valgrind, custom Python scripts for data processing and graph generation</li>
+      </ul>
+    
+      <h3 class="text-primary mt-4">Results</h3>
+      <ul class="list-unstyled">
+        <li>Achieved significant speedup (up to several factors) on medium and large datasets.</li>
+        <li>Demonstrated good portability of optimizations across different machine architectures.</li>
+        <li>Produced comprehensive reports with clear performance graphs and analysis.</li>
+      </ul>
+    
+      <p class="mt-4">
+        This project highlights my expertise in parallel programming, profiling, and optimization techniques.
+        It also shows my ability to interpret complex performance results and adapt solutions for both CPU and GPU architectures.
+      </p>
+      `
+    )
+    
+    
     
     
         

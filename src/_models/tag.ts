@@ -27,6 +27,19 @@ export class Tag {
     static readonly DEVOPS = new Tag('DevOps', 'darkgreen');
     static readonly DOCKER = new Tag('Docker', 'darkred');
 
+    static readonly PARALLEL_COMPUTING = new Tag('Parallel Computing', 'lightgreen');
+    static readonly OPENMP = new Tag('OpenMP', 'lightcoral');
+    static readonly CUDA = new Tag('CUDA', 'lightpink');
+    static readonly TCP = new Tag('TCP', 'lightyellow');
+    static readonly NETWORKING = new Tag('Networking', 'lightgray');
+    static readonly SIMULATION = new Tag('Simulation', 'lightsteelblue');
+
+    static readonly SCHEDULING = new Tag('Scheduling', 'lightseagreen');
+    static readonly MUTEX = new Tag('Mutex', 'lightsalmon');
+    static readonly PERFORMANCE = new Tag('Performance', 'lightcyan');
+    
+
+
     private constructor(private readonly key: string, private readonly color: string) {}
 
     getKey(): string {
